@@ -1,0 +1,15 @@
+{
+  "name": "gexin-ni",
+  "version": "0.1.0",
+  "description": "A simple webpage.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wangxian/gexi-ni"
+  },
+  "keywords": [
+    "革新"
+  ],
+  "author": "wangxian",
+  "license": "BSD"
+}
