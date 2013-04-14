@@ -21,8 +21,22 @@ define(function(require) {
         return false;
       }
 
+      var style = _e.position();
+      // style.left = e.clientX;
+      // style.top  = e.clientY;
+      // console.log(_e.position());
+
+      var offset = _e.attr('data-offset');
+      var offsetAP;
+      if(offset) {
+        offsetAP = offset.split(',');
+        style.left = style.left - offsetAP[0];
+        style.top  = style.top - offsetAP[1];
+      }
+      // console.log(style);
+
       it.$el.find('#mask').fadeIn(300, function(){
-        it.$el.find('.ui-dialog').filter('.'+ className).addClass('on');
+        it.$el.find('.ui-dialog').filter('.'+ className).css(style).addClass('on');
       });
     },
     btnClose: function(e){
