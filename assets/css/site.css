@@ -1,19 +1,26 @@
 @charset "utf-8";
-html { background: url('../img/bg.png') center top repeat; height: 100%; }
-body { background: none; overflow-y: hidden; color: #efefef; height: 100%; }
+html { background: url('../img/bg.png') center center repeat; height: 100%; }
+body { background: none; overflow: hidden; color: #efefef; height: 100%; }
+/* fixed */
+table#vbox {
+  /*background-color: #e69;*/
+  width: 100%; height: 100%;
+  text-align: center; vertical-align: middle;
+}
 .container {
-  height: 100%; position: relative; z-index: auto;
+  background-color: rgba(238, 102, 153, 0.5);
+  width:940px; height: 620px; position: relative; z-index: auto;
   /*background: rgba(222, 222, 222, 0.2);*/
 }
 
 .container img { position: absolute; cursor: pointer; }
-.container img.logo { left: 345px; top: 260px; }
-.container img.special { left: 410px; top: 90px; }
-.container img.product { left: 210px; top: 280px; }
-.container img.about { left: 170px; top: 480px; }
-.container img.aoyi { left: 416px; top: 570px; }
-.container img.contact { left: 640px; top: 440px; }
-.container img.etdream { left: 640px; top: 270px; cursor: default; }
+.container img.logo { left: 345px; top: 160px; }
+.container img.special { left: 410px; top: -10px; }
+.container img.product { left: 210px; top: 180px; }
+.container img.about { left: 170px; top: 380px; }
+.container img.aoyi { left: 416px; top: 470px; }
+.container img.contact { left: 640px; top: 340px; }
+.container img.etdream { left: 640px; top: 170px; cursor: default; }
 
 .ui-dialog {
   display: none;
@@ -23,8 +30,14 @@ body { background: none; overflow-y: hidden; color: #efefef; height: 100%; }
 }
 .ui-dialog .ui-dialog-close {position: absolute; right: -50px; top: 25px; width: 30px; height: 30px; cursor: pointer;}
 .ui-dialog.on { display: block; }
-.ui-dialog.special.on { left: 300px; top: 100px; }
-.ui-dialog.about.on { left: 100px; top: 200px; width: 700px; }
+
+/*over img */
+.ui-dialog.logo { width: 525px; height: 300px; }
+.ui-dialog.special { width: 414px; height: 360px; }
+.ui-dialog.about { width: 688px; height: 362px; }
+.ui-dialog.about img.ui-dialog-close { right: 30px; top: 25px; }
+.ui-dialog.aoyi { width: 850px; height: 635px; top: 0; left: 0; }
+.ui-dialog.product { width: 940px; height: 630px; background: url(../img/bg-text-product.png) no-repeat; }
 
 #mask {
   display: none;
@@ -32,3 +45,4 @@ body { background: none; overflow-y: hidden; color: #efefef; height: 100%; }
   position: absolute; left:0; top:0; z-index: 100;
   background-color: #000; opacity: 0.85; filter: alpha(opacity=85);
 }
+
