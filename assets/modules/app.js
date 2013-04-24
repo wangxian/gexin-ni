@@ -52,7 +52,7 @@ define(function(require) {
 
     btnProductClose: function(e){
       var it = this;
-      if(it.$el.find('#img-video .content').has('object')) {
+      if(it.$el.find('#img-video .content').has('iframe').length) {
         this.startMP3();
       }
 
