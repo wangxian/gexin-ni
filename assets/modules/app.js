@@ -42,20 +42,20 @@ define(function(require) {
       it.$el.find('#mask').fadeIn(300, function(){
         it.$el.find('.ui-dialog').filter('.'+ className).css(_style).addClass('on');
       });
-
-      this.stopMP3();
     },
 
     btnClose: function(e){
       var it = this;
       it.$el.find('#mask').fadeOut();
       it.$el.find('.ui-dialog.on').removeClass('on');
-
-      this.startMP3();
     },
 
     btnProductClose: function(e){
       var it = this;
+      if(it.$el.find('#img-video .content').has('object')) {
+        this.startMP3();
+      }
+
       it.$el.find('#mask-dialog').fadeOut();
       it.$el.find('#img-video .content').empty();
       it.$el.find('#img-video').hide();
@@ -89,22 +89,22 @@ define(function(require) {
 
       $('#mask-dialog').show();
       $('#img-video').show();
-
-      this.stopMP3();
     },
 
     btnShowVideo: function(e) {
+      this.stopMP3();
+
       $(e.currentTarget).parent().find('>img').click();
     },
 
     startMP3: function() {
-      var _html = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="160" height="21">'+
-                  '  <param name="movie" value="assets/player.swf?mp3=assets/ok.mp3&amp;autostart=1" />'+
+      var _html = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1" height="1">'+
+                  '  <param name="movie" value="assets/player.swf?soundFile=assets/ok.mp3&bg=0xCDDFF3&leftbg=0x357DCE&lefticon=0xF2F2F2&rightbg=0x357DCE&rightbghover=0x4499EE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xFFFFFF&border=0xFFFFFF&loader=0x8EC2F4&autostart=yes&loop=yes" />'+
                   '  <param name="quality" value="high" />'+
                   '  <param value="transparent" name="wmode" />'+
-                  '  <embed src="assets/player.swf?mp3=assets/ok.mp3&amp;autostart=1" width="160" height="21" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>'+
+                  '  <embed src="assets/player.swf?soundFile=assets/ok.mp3&bg=0xCDDFF3&leftbg=0x357DCE&lefticon=0xF2F2F2&rightbg=0x357DCE&rightbghover=0x4499EE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xFFFFFF&border=0xFFFFFF&loader=0x8EC2F4&autostart=yes&loop=yes" width="1" height="1" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>'+
                   '</object>';
-      $("body").append(_html);
+      $("body").prepend(_html);
     },
 
     stopMP3: function() {
