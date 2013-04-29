@@ -83,7 +83,7 @@ define(function(require) {
       }
       else {
         var video = _e.data('url');
-        $("#img-video .content").html('<embed src="http://player.youku.com/player.php/Type/Folder/Fid/19188186/Ob/1/sid/XNTQ4MTI1NjYw/v.swf" quality="high" width="800" height="500" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>');
+        $("#img-video .content").html('<embed src="'+ video +'" quality="high" width="800" height="500" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>');
       }
 
 
