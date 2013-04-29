@@ -13,8 +13,8 @@ table#vbox {
 }
 
 .container img { position: absolute; cursor: pointer; }
-.container img.logo { left: 345px; top: 160px; }
-.container img.special { left: 410px; top: -10px; }
+.container img.logo { left: 345px; top: 143px; }
+.container img.special { left: 410px; top: -30px; }
 .container img.product { left: 190px; top: 150px; }
 .container img.about { left: 170px; top: 365px; }
 .container img.aoyi { left: 416px; top: 470px; }
